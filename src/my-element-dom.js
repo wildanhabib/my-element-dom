@@ -57,8 +57,19 @@ export class myElementDom extends DDDSuper(LitElement) {
   <slot name="one"></slot>
   <slot name="two"></slot>
   <slot></slot>
-</div>`;
-  }
+
+</div>
+<slot></slot>
+<div>
+  <button @click=${this._getSlottedChildren}>Get Element</button>
+</div>
+`;
+}
+
+_getSlottedChildren() {
+  const slot=this.shadowRoot.querySelector('slot');
+  console.log(slot);
+}
 
   /**
    * haxProperties integration via file reference
