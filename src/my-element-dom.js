@@ -3,6 +3,10 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
 export class myElementDom extends DDDSuper(LitElement) {
 
+  static shadowRootOptions = {
+    ...LitElement.shadowRootOptions,delegatesFocus:true,
+  };
+  
   static get tag() {
     return "my-element-dom";
   }
@@ -50,6 +54,8 @@ export class myElementDom extends DDDSuper(LitElement) {
 <div class="wrapper">
   <div>${this.title}</div>
   <div>${this.cool ? html`<strong> Really Cool </strong>` : ``}</div>
+  <slot name="one"></slot>
+  <slot name="two"></slot>
   <slot></slot>
 </div>`;
   }

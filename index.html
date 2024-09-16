@@ -15,12 +15,25 @@
 
 <body>
   
-  <my-element-dom title="Cool stuf" cool></my-element-dom>
+  <my-element-dom title="Cool stuf" cool>Ini akan di-render lit-element</my-element-dom>
   <my-element-dom title="Cool stuf"></my-element-dom>
-  <my-element-dom title="Cool stuf"></my-element-dom>
-  <my-element-dom title="Cool stuf" cool></my-element-dom>
-  <my-element-dom title="Cool stuf"></my-element-dom>
-  <my-element-dom title="Cool stuf" cool></my-element-dom>
+  <my-element-dom title="Cool stuf">
+    <p slot="two">Elemen ini akan diletakkan pada slot
+      bernama two</p>
+
+  </my-element-dom>
+
+  <hr>
+  <my-element-dom title="Cool stuf" cool>
+
+    <p slot="one">Elemen ini akan diletakkan pada slot
+      bernama one</p>
+      <p slot="nope">Elemen ini tidak akan di-render karena
+      tidak ada slot bernama nope</p>
+      <p>Elemen ini akan dimunculkan pada slot default
+      (elemen slot tak bernama)</p>
+
+  </my-element-dom>
 
 
   <script type="module" src="./src/my-element-dom.js"></script>
